@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+ import React from "react";
+import { useDispatch } from "react-redux";
+import { ActiveAction, DesactiveAction } from "./actions/ActiveAction";
 
 function App() {
+ const dispatch = useDispatch()
+  const Active = () =>{
+    ActiveAction(true,dispatch)
+  }
+
+  const Desavtive = () =>{
+    DesactiveAction(false,dispatch)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <div>
+    <button onClick={Active}>ACTIVE</button>
+    <button onClick={Desavtive}>DESACTIVE</button>
+    <h1>hello</h1>
+   </div>
   );
 }
 
